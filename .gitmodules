@@ -7,3 +7,6 @@
 [submodule "security"]
 	path = security
 	url = https://github.com/gitmariosalazar/ms-security.git
+[submodule "notifications"]
+	path = notifications
+	url = https://github.com/gitmariosalazar/ms-notifications.git
