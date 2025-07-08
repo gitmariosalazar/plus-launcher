@@ -1,3 +1,6 @@
 [submodule "client-gateway"]
 	path = client-gateway
 	url = https://github.com/gitmariosalazar/client-gateway.git
+[submodule "docs"]
+	path = docs
+	url = https://github.com/gitmariosalazar/ms-docs.git
