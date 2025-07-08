@@ -4,3 +4,6 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/gitmariosalazar/ms-docs.git
+[submodule "security"]
+	path = security
+	url = https://github.com/gitmariosalazar/ms-security.git
