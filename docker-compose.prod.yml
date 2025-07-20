@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  client-gateway-prod:
+    build:
+      context: ./client-gateway
+      dockerfile: dockerfile.prod
+    image: client-gateway-prod
+    ports:
+      - '${GATEWAY_SERVER_PORT_PRODUCTION}:${GATEWAY_SERVER_PORT_PRODUCTION}'
+    env_file:
+      - ./client-gateway/.env
+    networks:
+      - plus-network
+
+  docs-ms-prod:
+    build:
+      context: ./docs
+      dockerfile: dockerfile.prod
+    image: docs-ms-prod
+    ports:
+      - '${DOCUMENTS_SERVER_PORT_PRODUCTION}:${DOCUMENTS_SERVER_PORT_PRODUCTION}'
+    env_file:
+      - ./docs/.env
+    networks:
+      - plus-network
+
+  notifications-ms-prod:
+    build:
+      context: ./notifications
+      dockerfile: dockerfile.prod
+    image: notifications-ms-prod
+    ports:
+      - '${NOTIFICATION_SERVER_PORT_PRODUCTION}:${NOTIFICATION_SERVER_PORT_PRODUCTION}'
+    env_file:
+      - ./notifications/.env
+    networks:
+      - plus-network
+
+  security-ms-prod:
+    build:
+      context: ./security
+      dockerfile: dockerfile.prod
+    image: security-ms-prod
+    ports:
+      - '${SECURITY_SERVER_PORT_PRODUCTION}:${SECURITY_SERVER_PORT_PRODUCTION}'
+    env_file:
+      - ./security/.env
+    networks:
+      - plus-network
+
+networks:
+  plus-network:
+    external: true

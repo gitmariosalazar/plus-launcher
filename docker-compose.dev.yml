@@ -6,7 +6,7 @@ services:
       context: ./client-gateway
       dockerfile: dockerfile.dev
     ports:
-      - '3000:3000'
+      - '${GATEWAY_SERVER_PORT_DEVELOPMENT}:${GATEWAY_SERVER_PORT_DEVELOPMENT}'
     volumes:
       - ./client-gateway/src:/usr/src/app/src
     command: npm run start:dev
@@ -20,7 +20,7 @@ services:
       context: ./security
       dockerfile: dockerfile.dev
     ports:
-      - '4001:4001'
+      - '${SECURITY_SERVER_PORT_DEVELOPMENT}:${SECURITY_SERVER_PORT_DEVELOPMENT}'
     volumes:
       - ./security/src:/usr/src/app/src
     command: npm run start:dev
@@ -34,7 +34,7 @@ services:
       context: ./notifications
       dockerfile: dockerfile.dev
     ports:
-      - '6003:6003'
+      - '${NOTIFICATION_SERVER_PORT_DEVELOPMENT}:${NOTIFICATION_SERVER_PORT_DEVELOPMENT}'
     volumes:
       - ./notifications/src:/usr/src/app/src
     command: npm run start:dev
@@ -48,7 +48,7 @@ services:
       context: ./docs
       dockerfile: dockerfile.dev
     ports:
-      - '5001:5001'
+      - '${DOCUMENTS_SERVER_PORT_DEVELOPMENT}:${DOCUMENTS_SERVER_PORT_DEVELOPMENT}'
     volumes:
       - ./docs/src:/usr/src/app/src
     command: npm run start:dev
