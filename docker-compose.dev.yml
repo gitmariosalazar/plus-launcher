@@ -5,6 +5,7 @@ services:
     build:
       context: ./client-gateway
       dockerfile: dockerfile.dev
+    restart: always
     ports:
       - '${GATEWAY_SERVER_PORT_DEVELOPMENT}:${GATEWAY_SERVER_PORT_DEVELOPMENT}'
     volumes:
@@ -19,6 +20,7 @@ services:
     build:
       context: ./security
       dockerfile: dockerfile.dev
+    restart: always
     ports:
       - '${SECURITY_SERVER_PORT_DEVELOPMENT}:${SECURITY_SERVER_PORT_DEVELOPMENT}'
     volumes:
@@ -33,6 +35,7 @@ services:
     build:
       context: ./notifications
       dockerfile: dockerfile.dev
+    restart: always
     ports:
       - '${NOTIFICATION_SERVER_PORT_DEVELOPMENT}:${NOTIFICATION_SERVER_PORT_DEVELOPMENT}'
     volumes:
@@ -47,6 +50,7 @@ services:
     build:
       context: ./docs
       dockerfile: dockerfile.dev
+    restart: always
     ports:
       - '${DOCUMENTS_SERVER_PORT_DEVELOPMENT}:${DOCUMENTS_SERVER_PORT_DEVELOPMENT}'
     volumes:
