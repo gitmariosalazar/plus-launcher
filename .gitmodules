@@ -10,6 +10,3 @@
 [submodule "notifications"]
 	path = notifications
 	url = https://github.com/gitmariosalazar/ms-notifications.git
-[submodule "readings"]
-	path = readings
-	url = https://github.com/gitmariosalazar/readings.git
